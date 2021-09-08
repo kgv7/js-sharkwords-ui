@@ -51,9 +51,7 @@ const generateLetterButtons = () => {
 //
 const disableLetterButton = (buttonEl) => {
   // Replace this with your code
-  const disabledButton = document.querySelector("button");
-
-  disabledButton.setAttribute('disabled', 'true');
+  buttonEl.disabled = true;
 };
 
 // This is a helper function we will use in the future
@@ -62,12 +60,7 @@ const disableLetterButton = (buttonEl) => {
 
 const isLetterInWord = (letter) => {
   // Replace this with your code
-  const searchLetter = document.querySelector('.letter-box');
-  console.log(searchLetter)
-  
-  if (searchLetter === `<div class="letter-box ${letter}"></div>`) {
-    return true;
-  }
+  return document.querySelector(`div.${letter}`) !== null;
 };
 
 
@@ -82,7 +75,6 @@ const isLetterInWord = (letter) => {
   const word = 'hello';
 
   // call the function that makes an empty line for each letter in the word
-  // const randomWord = cryptoObj.getRandomValues(WORDS);
   createDivsForChars(word);
 
   // call the function that makes a button for each letter in the alphabet
